@@ -18,7 +18,7 @@ const onInput = e => {
     resetCardMarkup();
     resetListMarkup();
     return;
-  };
+  }
   fetchCountries(name)
     .then(r => {
       if (!r.ok) {
@@ -28,9 +28,9 @@ const onInput = e => {
     })
     .then(data => {
       if (data.length >= 10) {
-        return Notify.info(
-         infoMsg
-        );
+        resetCardMarkup();
+        resetListMarkup();
+        return Notify.info(infoMsg);
       }
       renderMarkup(data);
     })
